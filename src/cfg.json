@@ -1,0 +1,12 @@
+{
+  "IPFS": {
+    "geatway": "https://ipfs.infura.io",
+    "apiServer": "https://ipfs.infura.io:5001"
+  },
+  "WEB3": {
+    "http": "http://localhost:7545"
+  },
+  "network": "5777",
+  "imgUrl": "https://raw.githubusercontent.com/BytesForBites/cryptokitty-designer/master/src/cattributes",
+  "contract": "0x686ed347119ddd3e19e3e36d84cef2b9e5d12574"
+}
