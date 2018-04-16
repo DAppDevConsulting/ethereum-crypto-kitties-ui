@@ -130,7 +130,7 @@ const mapKittyFromMarket = async (id) => {
     const kitty = await mapKitty(id);
     const lot = await Kitties.getLot(id);
     kitty.isForSale = true;
-    kitty.price = `${lot.price} ETH`;
+    kitty.price = parseInt(lot.price, 10);
     return kitty;
 };
 

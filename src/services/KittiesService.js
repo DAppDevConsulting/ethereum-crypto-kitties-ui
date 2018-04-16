@@ -70,6 +70,7 @@ class SyncManager {
         map.set('_KittyCreated', (e) => this._onKittyCreated(e));
         map.set('_LotCreated', (e) => this._onLotCreated(e));
         map.set('_LotRemoved', (e) => this._onLotRemoved(e));
+        map.set('Transfer', (e) => this._onKittyTransfered(e));
         return new ContractSynchronizer(
             this.contract,
             map,
@@ -144,6 +145,12 @@ class SyncManager {
         this._callWatcher('lotRemoved', id);
     }
 
+    _onKittyTransfered (event) {
+        const id = event.returnValues._tokenId;
+        const newOwner = event.returnValues._to;
+        this._map.get(id).owner = newOwner;
+        this._callWatcher('kittyTransfered', id);
+    }
     isInitialized () {
         return this.lastKnownBlock > 0;
     }

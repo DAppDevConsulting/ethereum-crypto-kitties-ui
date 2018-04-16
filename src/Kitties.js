@@ -61,8 +61,8 @@ const sell = async (id, price) => {
     await send(web3Contract.methods.createLot, id, price);
 };
 
-const buy = async (id) => {
-    await send(web3Contract.methods.bid, id);
+const buy = async (id, price) => {
+    await send(web3Contract.methods.bid, id, {value: price});
 };
 
 const breed = async (mId, sId) => {
